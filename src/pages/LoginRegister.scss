@@ -1,0 +1,85 @@
+@use '../styles/partials/colors' as*;
+@use '../styles/partials/mixins' as*;
+@use '../styles/partials/formPadding' as*;
+
+* {
+    margin: 0;
+    padding: 0;   
+    box-sizing: border-box; 
+}
+
+// Login and Register pages styles
+.login,
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../assets/background2.jpg');
+
+  @include mobile {
+    .form {
+      width: 90%;
+    }
+  }
+
+  @include tablet {
+    .form {
+      width: 70%;
+    }
+  }
+
+  @include desktop {
+    .form {
+      width: 50%;
+    }
+  }
+}
+
+.login__form,
+.register__form {
+    width: 300px;
+    padding: $form-padding;
+    background-color: $DeepMidnightBlue;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login__label,
+.register__label {
+    display: block;
+      margin: 10px 0;
+      color: $white;
+      font-weight: bold;
+}
+
+.login__input,
+.register__input {
+    width: 100%;
+    padding: $input-padding;
+    border: 1px solid $SlateGray;
+    border-radius: $input-border-radius;
+    margin: 5px 0;
+
+    &:focus {
+      outline: none;
+      border-color: $RoseQuartz;
+    }
+}
+
+.login__button,
+.register__button {
+    background-color: $GoldenYellow;
+    color: $DeepMidnightBlue;
+    border: none;
+    border-radius: $button-border-radius;
+    padding: $button-padding;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $RoseQuartz;
+      color: $white;
+    }
+}

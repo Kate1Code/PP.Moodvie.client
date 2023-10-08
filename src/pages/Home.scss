@@ -1,0 +1,66 @@
+@use '../styles/partials/colors' as*;
+@use '../styles/partials/mixins' as*;
+@use '../styles/partials/formPadding' as*;
+
+* {
+    margin: 0;
+    padding: 0;   
+    box-sizing: border-box; 
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../assets/background2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); 
+    }
+  
+    .home__text {
+        font-size: 5rem;
+        text-align: center;
+        position: relative; 
+        z-index: 1;
+        opacity: 0; 
+        color: transparent; 
+
+        background: linear-gradient(to bottom, $MintGreen, $white);
+        background-clip: text; 
+      
+        animation: fadeIn 1s ease-in-out forwards; 
+      }
+      
+      @keyframes fadeIn {
+        0% {
+          opacity: 0; 
+        }
+        100% {
+          opacity: 1; 
+        }
+      }
+  
+      @include mobile {
+        font-size: 18px;
+      }
+  
+      @include tablet {
+        font-size: 20px;
+      }
+  
+      @include desktop {
+        font-size: 24px;
+      }
+    }
+  

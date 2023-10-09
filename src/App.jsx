@@ -7,6 +7,7 @@ import MovieList from './pages/MovieList.jsx';
 import Login from './pages/Login.jsx';
 import axios from 'axios';
 import { Toaster } from 'react-hot-toast'
+import './App.scss';
 
 
 axios.defaults.baseURL = 'http://localhost:8080';
@@ -18,6 +19,7 @@ useEffect(() => {
   document.title = "Moodvie";
 }, []);
   return (
+    <div className='check'>
     <Router>
       <Navbar />
       <Toaster position='bottom-right' toastOption={{duration: 2000}} />
@@ -28,6 +30,7 @@ useEffect(() => {
         <Route path='/movies' element={<MovieList />} />
       </Routes>
     </Router>
+    </div>
   );
 }
 

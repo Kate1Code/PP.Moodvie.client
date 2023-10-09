@@ -3,6 +3,7 @@ import MovieCard from '../components/MovieCard/MovieCard';
 import MovieButtons from '../components/MovieButtons/MovieButtons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './MovieList.scss';
 
 const YOUTUBE_API_KEY = 'AIzaSyDTCitv--BQVm_cUr6kCNTFs5CR2B9cJMc';
 const TMDB_API_KEY = '2eaab7db3b1aff5624e05ed8efc81367';
@@ -61,9 +62,7 @@ function MovieList() {
         toast.success('Movie added to your MoviePool list', {
           position: toast.POSITION.TOP_CENTER,
         });
-  
-        // Now you can use 'trailerUrl' and 'posterUrl' to display the trailer and poster.
-        // Implement your logic to display them in the MovieCard component.
+
         console.log('Trailer URL:', trailerUrl);
         console.log('Poster URL:', posterUrl);
       }
@@ -90,16 +89,23 @@ function MovieList() {
   const posterUrl = currentMovie ? fetchMoviePoster(currentMovie) : null;
 
   return (
-    <div>
+    <div className="movie-list-container">
       <ToastContainer />
-      {currentIndex < movies.length ? (
-        <>
-          <MovieCard movie={movies[currentIndex]} posterUrl={posterUrl} />
-          <MovieButtons onAction={handleAction} />
-        </>
-      ) : (
-        <div>No more movies to show</div>
-      )}
+  {currentIndex < movies.length ? (
+    <>
+      <MovieCard
+        movie={movies[currentIndex]}
+        posterUrl={posterUrl}
+        className="movie-list__card" 
+      />
+      <MovieButtons
+        onAction={handleAction}
+        className="movie-list__buttons"
+      />
+    </>
+  ) : (
+    <div className="movie-list__no-more">No more movies to show</div> 
+  )}
     </div>
   );
 }

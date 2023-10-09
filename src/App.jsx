@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Home from './pages/Home.jsx';
@@ -8,10 +8,15 @@ import Login from './pages/Login.jsx';
 import axios from 'axios';
 import { Toaster } from 'react-hot-toast'
 
+
 axios.defaults.baseURL = 'http://localhost:8080';
 axios.defaults.withCredentials = true
 
+
 function App() {
+useEffect(() => {
+  document.title = "Moodvie";
+}, []);
   return (
     <Router>
       <Navbar />

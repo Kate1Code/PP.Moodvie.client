@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Moodvie README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+**Moodvie** is an interactive app dedicated to helping couples or groups of friends select a movie for their date or hangout night. By taking into account the preferences of all involved, it ensures a delightful cinematic experience without the hassle of indecision.
 
-In the project directory, you can run:
+## Table of Contents
+- [Description](#description)
+- [Problem Statement](#problem-statement)
+- [User Persona](#user-persona)
+- [Features](#features)
+- [Tech Stack & APIs](#tech-stack-and-apis)
+- [Client-Side Implementation](#client-side-implementation)
+- [Server-Side Implementation](#server-side-implementation)
+- [Project Roadmap](#project-roadmap)
+- [Demo Day Information](#demo-day-information)
 
-### `npm start`
+## Description
+**Moodvie** allows users to input their movie preferences. The app then matches these preferences against their date's or friend's preferences, eventually suggesting movies that will be enjoyed by both.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Problem Statement
+Movie selection can often lead to long, indecisive discussions, especially during dates. The challenge Moodvie addresses is to find mutual movie interests without scrolling through numerous choices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## User Persona
+The app targets couples or groups of friends intending to watch a movie together. With an intuitive design backed by a romantic or fun style, Moodvie enhances the overall mood for a date or gathering.
 
-### `npm test`
+## Features
+- User account creation and personalization.
+- Movie categorization: 'yes', 'maybe', or 'no'.
+- A pool for 'yes' and 'maybe' categorized movies.
+- Trailer Display.
+- Integration with IMDb for real-time movie data and trailers.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack and APIs
+- **Frontend**: React, video integration, Axios
+- **Backend**: Node.js, express.js, JWT
+- **Database**: MySQL
+- **API**: [IMDb API](https://www.imdb.com/)
 
-### `npm run build`
+## Client-Side Implementation
+Please refer to the sitemap and screen details for a comprehensive overview of the client-side structure. Mockups and screen details can provide further insight into UI/UX aspects.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Server-Side Implementation
+### Endpoints
+- `HTTP POST` /user/register
+- `HTTP POST` /user/login
+- `HTTP GET` /movies/match
+- `HTTP GET, POST` /movies/preferences
+- `HTTP GET, POST` /movies/pool
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### External APIs
+Moodvie utilizes [The Movie Database API](https://www.imdb.com/) to fetch movie data based on users' preferences.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Database Structure
+Table: MoviePool
+- movieID
+- title
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Security
+JWT (JSON Web Token) ensures user authentication and session management.
